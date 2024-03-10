@@ -13,18 +13,22 @@ if video.isOpened() :
     recording = False
     reverse = False
     while 1 :
-        valid, img = video.read()
+        valid, img_rec = video.read()
+        
+        
         if not valid :
             break
         
-        if recording :
-            cv.circle(img, (10,10), radius = 5, color = (0,0,255), thickness = -1)
-            rec.write(img)
-            
         if reverse :
-            img = img[:,::-1,:]
+            img_rec = cv.flip(img_rec,1)
+            
+        img_scr = img_rec.copy()
         
-        cv.imshow('recorder', img)
+        if recording :
+            cv.circle(img_scr, (15,15), radius = 10, color = (0,0,255), thickness = -1)
+            rec.write(img_rec)
+            
+        cv.imshow('recorder', img_scr)
         key = cv.waitKey(wait_msec)
         if key == 27 :
             break
@@ -33,8 +37,6 @@ if video.isOpened() :
         elif key == ord('r') :
             reverse = not reverse
             
-            
-    # Release everything if job is finished
     video.release()
     rec.release()
     cv.destroyAllWindows()
