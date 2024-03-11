@@ -4,7 +4,7 @@ import numpy as np
 video = cv.VideoCapture(0)
 
 if video.isOpened() :
-    fps = 60
+    fps = 30
     wait_msec = int(1/fps*1000)
 
     fourcc = cv.VideoWriter_fourcc(*'XVID')
@@ -12,9 +12,16 @@ if video.isOpened() :
     rec.open('record.avi', fourcc, fps, (640, 480))
     recording = False
     reverse = False
+    contrast = 1
+    bright = 0
+    
     while 1 :
-        valid, img_rec = video.read()
+        valid, img = video.read()
         
+        img_rec = contrast * img + bright
+        img_rec[img_rec < 0] = 0
+        img_rec[img_rec > 255] = 255
+        img_rec = img_rec.astype(np.uint8)
         
         if not valid :
             break
@@ -36,6 +43,17 @@ if video.isOpened() :
             recording = not recording
         elif key == ord('r') :
             reverse = not reverse
+        elif key == ord('1'):
+                contrast -= 0.1
+                if contrast < 0 : contrast = 0
+        elif key == ord('2'):
+                contrast += 0.1
+        elif key == ord('3') :
+                bright -= 1
+                if bright < 0 :
+                    bright = 0
+        elif key == ord('4') :
+            bright += 1
             
     video.release()
     rec.release()

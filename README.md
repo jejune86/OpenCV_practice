@@ -18,16 +18,25 @@ R : Flip camera
 
 Space bar : Record 
 
+1 / 2 : adjust contrast
+
+3 / 4 : adjust brightness
+
 While recording, red dot appears on the top left.
 
 
 ## Screenshots
-
-<img src="screenshot/sshot2.png">
 preview mode
+<img src="screenshot/sshot2.png">
 
-<img src="screenshot/sshot3.png">
 flipped screen
+<img src="screenshot/sshot3.png">
 
-<img src="screenshot/sshot4.png">
 recording 
+<img src="screenshot/sshot4.png">
+
+low contrast
+<img src="screenshot/sshot5.png">
+
+high brightness
+<img src="screenshot/sshot6.png">
