@@ -25,16 +25,16 @@ You can watch sample video in output folder
 Q : Quit
 
 ## Screenshots
-sample1
+sample1  
 <img src="screen/screenshot1.png">
 
-sample2
+sample2  
 <img src="screen/screenshot2.png">
 
-sample3
+sample3  
 <img src="screen/screenshot3.png">
 
-sample4
+sample4  
 <img src="screen/screenshot4.png">
 
 ## Limitation of algorithm
