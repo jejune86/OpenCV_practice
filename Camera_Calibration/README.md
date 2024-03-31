@@ -25,6 +25,8 @@ After calibration, You can watch distortion corrected video by pressing TAB
 
 You can use your video. Put your video instead of mine
 
+You can install checkerboard in [here](https://markhedleyjones.com/projects/calibration-checkerboard-collection)
+
 ## Sample
 Calibration
 <img src="screen/screenshot1.png">  
